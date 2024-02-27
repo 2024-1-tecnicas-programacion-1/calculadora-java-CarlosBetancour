@@ -26,6 +26,22 @@ public class Calculadora {
                 // Operación división:
                 respuesta = (double) numero1 / numero2;
                 break;
+                 case '^' :
+                // Operación potencia:
+                respuesta = Math.pow(numero1, numero2);
+                break;
+            case '%' :
+                // Operación módulo:
+                respuesta = numero1 % numero2;
+                break;
+                 case 'r' :
+                // Operación raíz cuadrada:
+                if (numero1 >= 0) {
+                    respuesta = Math.sqrt(numero1);
+                } else {
+                    throw new IllegalArgumentException("Error: el número debe ser no negativo.");
+                }
+                break;
             
             // TODO: DEBES CREAR AQUÍ LOS CASES PARA LA OPERACIÓN DE LA POTENCIA Y EL MÓDULO.
                 
@@ -46,7 +62,7 @@ public class Calculadora {
         
         // Lectura de la operación a realizar
         // TODO: DEBES ADICIONAR EL SÍMBOLO DE ^ Y % PARA CALCULAR LA POTENCIA Y EL MÓDULO
-        System.out.println("Ingrese la operación (+, -, *, /)");
+         System.out.println("Ingrese la operación (+, -, *, /, ^, %, r)");      
         char operacion = lector.next().charAt(0);
         
         double respuesta = calcular(numero1, numero2, operacion);
